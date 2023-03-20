@@ -5,6 +5,8 @@ import com.example.demo3.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class StudentServiceImpl implements StudentService{
 
@@ -13,9 +15,14 @@ public class StudentServiceImpl implements StudentService{
     private StudentRepository studentRepository;
 
     @Override
-    public Student getStudentById(String id) {
-        return studentRepository.findById(id).orElse(null);
+    public Student getStudentByIdAndByName(String id, String name) {
+        return studentRepository.findByIdAndName(id, name).orElse(null);
     }
+
+
+//    public Student getStudentByIdAndByName(String id, String name) {
+//        return null;
+//    }
 
     @Override
     public Student createStudent(Student student) {

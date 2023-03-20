@@ -3,7 +3,7 @@ import com.example.demo3.model.Student;
 
 public interface StudentService {
 
-    Student getStudentById(String id);
+    Student getStudentByIdAndByName(String id, String name);
 
     Student createStudent(Student student);
 
